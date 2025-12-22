@@ -64,20 +64,20 @@ public class Gap
      */
     public static class Right extends Gap
     {
-        private Right(int value)
+        private Right(int gap)
         {
-            super(value);
+            super(gap);
         }
 
         /**
          * 指定された間隔で {@code Right} を生成する。
          *
-         * @param value 間隔
+         * @param gap 間隔
          * @return {@code Right}
          */
-        public static Right of(int value)
+        public static Right of(int gap)
         {
-            return new Right(value);
+            return new Right(gap);
         }
     }
 
@@ -86,20 +86,20 @@ public class Gap
      */
     public static class Bottom extends Gap
     {
-        private Bottom(int value)
+        private Bottom(int gap)
         {
-            super(value);
+            super(gap);
         }
 
         /**
          * 指定された間隔で {@code Bottom} を生成する。
          *
-         * @param value 間隔
+         * @param gap 間隔
          * @return {@code Bottom}
          */
-        public static Bottom of(int value)
+        public static Bottom of(int gap)
         {
-            return new Bottom(value);
+            return new Bottom(gap);
         }
     }
 }
