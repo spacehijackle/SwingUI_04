@@ -39,7 +39,7 @@ public class Spacer
         }
         else
         {
-            // 幅・高さが固定値の場合、固定のスペース領域を確保
+            // 幅・高さに最大限の値を含まない場合、固定のスペース領域を確保
             return fixed(new Dimension(width.length, height.length));
         }
     }
