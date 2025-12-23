@@ -5,6 +5,7 @@ import java.util.function.Consumer;
 
 import javax.swing.JComponent;
 
+import com.swingui.value.UISize;
 import com.swingui.value.UIValue;
 import com.swingui.value.gap.AllSidesGap;
 import com.swingui.value.gap.Gap;
@@ -13,7 +14,6 @@ import com.swingui.value.gap.Gap.Bottom;
 import com.swingui.value.gap.Gap.Left;
 import com.swingui.value.gap.Gap.Right;
 import com.swingui.value.gap.Gap.Top;
-import com.swingui.value.UISize;
 
 /**
  * Swingの各GUI部品（ウィジット）を宣言的UI用に拡張するインターフェース定義

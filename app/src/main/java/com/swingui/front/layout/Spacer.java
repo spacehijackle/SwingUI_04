@@ -27,7 +27,7 @@ public class Spacer
         Height height = Height.of(0);
         for(UISize size : sizes)
         {
-            if(size instanceof Width)  width = (Width)size;
+            if(size instanceof Width)  width =  (Width)size;
             if(size instanceof Height) height = (Height)size;
         }
 

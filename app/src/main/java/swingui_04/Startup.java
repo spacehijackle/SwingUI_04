@@ -12,13 +12,13 @@ import com.swingui.front.button.Button;
 import com.swingui.front.layout.HStack;
 import com.swingui.front.layout.Spacer;
 import com.swingui.front.layout.VStack;
-import com.swingui.value.UISize.Height;
-import com.swingui.value.UISize.Width;
 import com.swingui.value.gap.Gap.Bottom;
 import com.swingui.value.gap.Gap.Left;
 import com.swingui.value.gap.Gap.Right;
 import com.swingui.value.gap.Symmetry.Horizontal;
 import com.swingui.value.Spacing;
+import com.swingui.value.UISize.Height;
+import com.swingui.value.UISize.Width;
 
 public class Startup
 {
