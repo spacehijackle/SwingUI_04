@@ -9,7 +9,7 @@ import com.swingui.value.gap.Symmetry.Horizontal;
 import com.swingui.value.gap.Symmetry.Vertical;
 
 /**
- * 四方（{@link Left}, {@link Top}, {@link Right}, {@link Bottom}）の間隔提供クラス
+ * 四方（{@link Left}, {@link Top}, {@link Right}, {@link Bottom}）のギャップ（間隔）値提供クラス
  * 
  * @author t.yoshida
  */
