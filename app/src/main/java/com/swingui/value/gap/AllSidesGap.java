@@ -42,9 +42,9 @@ public class AllSidesGap
      */
     public static AllSidesGap defaults()
     {
-        Left left     = Left.of(UIDefaults.COMPONENT_GAP);
-        Top  top      = Top.of(UIDefaults.COMPONENT_GAP);
-        Right right   = Right.of(UIDefaults.COMPONENT_GAP);
+        Left   left   = Left.of(UIDefaults.COMPONENT_GAP);
+        Top    top    = Top.of(UIDefaults.COMPONENT_GAP);
+        Right  right  = Right.of(UIDefaults.COMPONENT_GAP);
         Bottom bottom = Bottom.of(UIDefaults.COMPONENT_GAP);
 
         return new AllSidesGap(left, top, right, bottom);
@@ -60,11 +60,11 @@ public class AllSidesGap
     {
         // 四方のパディング決定
         // ※デフォルト値を設定した後、指定された値で上書き
-        AllSidesGap sides = defaults();
-        Left left     = sides.left;
-        Top  top      = sides.top;
-        Right right   = sides.right;
-        Bottom bottom = sides.bottom;
+        AllSidesGap paddings = defaults();
+        Left   left   = paddings.left;
+        Top    top    = paddings.top;
+        Right  right  = paddings.right;
+        Bottom bottom = paddings.bottom;
         for(Gap gap : gaps)
         {
             if(gap instanceof Left)   left   = (Left)gap;
@@ -86,11 +86,11 @@ public class AllSidesGap
     {
         // 四方のパディング決定
         // ※デフォルト値を設定した後、指定された値で上書き
-        AllSidesGap sides = defaults();
-        Left left     = sides.left;
-        Top  top      = sides.top;
-        Right right   = sides.right;
-        Bottom bottom = sides.bottom;
+        AllSidesGap paddings = defaults();
+        Left   left   = paddings.left;
+        Top    top    = paddings.top;
+        Right  right  = paddings.right;
+        Bottom bottom = paddings.bottom;
         for(Symmetry symmetry : symmetries)
         {
             if(symmetry instanceof Horizontal)
