@@ -36,6 +36,21 @@ public class AllSidesGap
     }
 
     /**
+     * デフォルトの間隔値で {@code AllSidesGap} を生成する。
+     * 
+     * @return {@code AllSidesGap}
+     */
+    public static AllSidesGap defaults()
+    {
+        Left left     = Left.of(UIDefaults.COMPONENT_GAP);
+        Top  top      = Top.of(UIDefaults.COMPONENT_GAP);
+        Right right   = Right.of(UIDefaults.COMPONENT_GAP);
+        Bottom bottom = Bottom.of(UIDefaults.COMPONENT_GAP);
+
+        return new AllSidesGap(left, top, right, bottom);
+    }
+
+    /**
      * 指定された間隔値で {@code AllSidesGap} を生成する。
      * 
      * @param gaps 間隔値（Left, Top, Right, Bottom）
@@ -45,10 +60,11 @@ public class AllSidesGap
     {
         // 四方のパディング決定
         // ※デフォルト値を設定した後、指定された値で上書き
-        Left left     = Left.of(UIDefaults.COMPONENT_GAP);
-        Top  top      = Top.of(UIDefaults.COMPONENT_GAP);
-        Right right   = Right.of(UIDefaults.COMPONENT_GAP);
-        Bottom bottom = Bottom.of(UIDefaults.COMPONENT_GAP);
+        AllSidesGap sides = defaults();
+        Left left     = sides.left;
+        Top  top      = sides.top;
+        Right right   = sides.right;
+        Bottom bottom = sides.bottom;
         for(Gap gap : gaps)
         {
             if(gap instanceof Left)   left   = (Left)gap;
@@ -68,10 +84,13 @@ public class AllSidesGap
      */
     public static AllSidesGap of(Symmetry... symmetries)
     {
-        Left left     = Left.of(UIDefaults.COMPONENT_GAP);
-        Top  top      = Top.of(UIDefaults.COMPONENT_GAP);
-        Right right   = Right.of(UIDefaults.COMPONENT_GAP);
-        Bottom bottom = Bottom.of(UIDefaults.COMPONENT_GAP);
+        // 四方のパディング決定
+        // ※デフォルト値を設定した後、指定された値で上書き
+        AllSidesGap sides = defaults();
+        Left left     = sides.left;
+        Top  top      = sides.top;
+        Right right   = sides.right;
+        Bottom bottom = sides.bottom;
         for(Symmetry symmetry : symmetries)
         {
             if(symmetry instanceof Horizontal)
