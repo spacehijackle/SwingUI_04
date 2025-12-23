@@ -10,9 +10,9 @@ import javax.swing.Icon;
 import javax.swing.JButton;
 
 import com.swingui.event.WTClickListener;
-import com.swingui.value.Gap;
 import com.swingui.value.UISize;
 import com.swingui.value.UIValue;
+import com.swingui.value.gap.Gap;
 import com.swingui.widget.Widget;
 import com.swingui.widget.util.WidgetHelper;
 

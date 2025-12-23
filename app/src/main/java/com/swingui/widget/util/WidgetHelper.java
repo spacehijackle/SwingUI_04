@@ -7,15 +7,11 @@ import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 
-import com.swingui.constant.UIDefaults;
-import com.swingui.value.Gap;
-import com.swingui.value.Gap.Bottom;
-import com.swingui.value.Gap.Left;
-import com.swingui.value.Gap.Right;
-import com.swingui.value.Gap.Top;
 import com.swingui.value.UISize;
 import com.swingui.value.UISize.Height;
 import com.swingui.value.UISize.Width;
+import com.swingui.value.gap.AllSidesGap;
+import com.swingui.value.gap.Gap;
 import com.swingui.widget.Framer;
 import com.swingui.widget.Widget;
 
@@ -51,18 +47,8 @@ public class WidgetHelper
      */
     public static <T extends JComponent> T padding(T target, Gap... gaps)
     {
-        // 四方のパディング決定
-        Left left     = Left.of(UIDefaults.COMPONENT_GAP);
-        Top  top      = Top.of(UIDefaults.COMPONENT_GAP);
-        Right right   = Right.of(UIDefaults.COMPONENT_GAP);
-        Bottom bottom = Bottom.of(UIDefaults.COMPONENT_GAP);
-        for(Gap gap : gaps)
-        {
-            if(gap instanceof Left)   left   = (Left)gap;
-            if(gap instanceof Top)    top    = (Top)gap;
-            if(gap instanceof Right)  right  = (Right)gap;
-            if(gap instanceof Bottom) bottom = (Bottom)gap;
-        }
+        // 四方のパディング取得
+        AllSidesGap sides = AllSidesGap.of(gaps);
 
         // パディング設定
         target.setBorder
@@ -70,7 +56,10 @@ public class WidgetHelper
             BorderFactory.createCompoundBorder
             (
                 target.getBorder(),
-                BorderFactory.createEmptyBorder(top.gap, left.gap, bottom.gap, right.gap)
+                BorderFactory.createEmptyBorder
+                (
+                    sides.top.gap, sides.left.gap, sides.bottom.gap, sides.right.gap
+                )
             )
         );
         return target;

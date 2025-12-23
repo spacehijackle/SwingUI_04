@@ -6,14 +6,14 @@ import java.util.function.Consumer;
 import javax.swing.JComponent;
 
 import com.swingui.value.UIValue;
-import com.swingui.widget.util.PaddingHelper;
-import com.swingui.value.Gap;
-import com.swingui.value.Gap.Bottom;
-import com.swingui.value.Gap.Left;
-import com.swingui.value.Gap.Right;
-import com.swingui.value.Gap.Top;
+import com.swingui.value.gap.AllSidesGap;
+import com.swingui.value.gap.Gap;
+import com.swingui.value.gap.Symmetry;
+import com.swingui.value.gap.Gap.Bottom;
+import com.swingui.value.gap.Gap.Left;
+import com.swingui.value.gap.Gap.Right;
+import com.swingui.value.gap.Gap.Top;
 import com.swingui.value.UISize;
-import com.swingui.value.Symmetry;
 
 /**
  * Swingの各GUI部品（ウィジット）を宣言的UI用に拡張するインターフェース定義
@@ -40,7 +40,8 @@ public interface Widget<T extends JComponent>
      */
     default T padding(Symmetry... symmetries)
     {
-        return PaddingHelper.padding(this, symmetries);
+        AllSidesGap sides = AllSidesGap.of(symmetries);
+        return padding(sides.left, sides.top, sides.right, sides.bottom);
     }
 
     /**

@@ -1,4 +1,4 @@
-package com.swingui.value;
+package com.swingui.value.gap;
 
 /**
  * 水平方向、垂直方向のギャップ（間隔）値提供クラス

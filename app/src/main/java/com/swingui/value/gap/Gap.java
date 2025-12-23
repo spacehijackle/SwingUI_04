@@ -1,4 +1,4 @@
-package com.swingui.value;
+package com.swingui.value.gap;
 
 /**
  * ギャップ（間隔）値提供クラス
