@@ -16,9 +16,9 @@ import com.swingui.value.gap.Gap.Bottom;
 import com.swingui.value.gap.Gap.Left;
 import com.swingui.value.gap.Gap.Right;
 import com.swingui.value.gap.Symmetry.Horizontal;
+import com.swingui.value.size.UILength.Height;
+import com.swingui.value.size.UILength.Width;
 import com.swingui.value.Spacing;
-import com.swingui.value.UISize.Height;
-import com.swingui.value.UISize.Width;
 
 public class Startup
 {
@@ -68,7 +68,7 @@ public class Startup
     }
 
     /**
-     * {@link Spacer} / {@link Widget#frame(UISize...)} のパターンをテストする。
+     * {@link Spacer} / {@link Widget#frame(UILength...)} のパターンをテストする。
      */
     private void testUISizePatterns()
     {

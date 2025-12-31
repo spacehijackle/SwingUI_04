@@ -5,7 +5,6 @@ import java.util.function.Consumer;
 
 import javax.swing.JComponent;
 
-import com.swingui.value.UISize;
 import com.swingui.value.UIValue;
 import com.swingui.value.gap.AllSidesGap;
 import com.swingui.value.gap.Gap;
@@ -14,6 +13,7 @@ import com.swingui.value.gap.Gap.Bottom;
 import com.swingui.value.gap.Gap.Left;
 import com.swingui.value.gap.Gap.Right;
 import com.swingui.value.gap.Gap.Top;
+import com.swingui.value.size.UILength;
 
 /**
  * Swingの各GUI部品（ウィジット）を宣言的UI用に拡張するインターフェース定義
@@ -66,10 +66,10 @@ public interface Widget<T extends JComponent>
     /**
      * 自身のサイズの設定をする。
      * 
-     * @param sizes 幅・高さサイズ
+     * @param lengths 幅・高さサイズ
      * @return 自身のインスタンス
      */
-    T frame(UISize... sizes);
+    T frame(UILength... lengths);
 
     /**
      * フォーカスの設定をする。

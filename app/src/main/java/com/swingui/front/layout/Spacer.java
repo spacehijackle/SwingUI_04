@@ -2,9 +2,10 @@ package com.swingui.front.layout;
 
 import java.awt.Dimension;
 
-import com.swingui.value.UISize;
-import com.swingui.value.UISize.Height;
-import com.swingui.value.UISize.Width;
+import com.swingui.value.size.UILength;
+import com.swingui.value.size.UILength.Height;
+import com.swingui.value.size.UILength.Width;
+import com.swingui.value.size.WxHSize;
 import com.swingui.widget.PanelWT;
 
 /**
@@ -17,30 +18,24 @@ public class Spacer
     /**
      * 指定した幅・高さのスペース領域を確保する。
      * 
-     * @param sizes 幅・高さのサイズ
+     * @param lengths 幅・高さのサイズ
      * @return {@code PanelWT}
      */
-    public static PanelWT of(UISize... sizes)
+    public static PanelWT of(UILength... lengths)
     {
-        // 幅・高さスペースの決定
-        Width  width  = Width.of(0);
-        Height height = Height.of(0);
-        for(UISize size : sizes)
-        {
-            if(size instanceof Width)  width =  (Width)size;
-            if(size instanceof Height) height = (Height)size;
-        }
+        // 幅・高さスペースの取得
+        WxHSize size = WxHSize.of(WxHSize.zero(), lengths);
 
         // 幅・高さスペースの設定
-        if(isInfinite(width) || isInfinite(height))
+        if(isInfinite(size.width) || isInfinite(size.height))
         {
             // 幅または高さが最大限の場合、柔軟なスペース領域を確保
-            return flexible(new Dimension(width.length, height.length));
+            return flexible(new Dimension(size.width.length, size.height.length));
         }
         else
         {
             // 幅・高さに最大限の値を含まない場合、固定のスペース領域を確保
-            return fixed(new Dimension(width.length, height.length));
+            return fixed(new Dimension(size.width.length, size.height.length));
         }
     }
 

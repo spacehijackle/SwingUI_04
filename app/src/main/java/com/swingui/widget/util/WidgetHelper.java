@@ -7,11 +7,12 @@ import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 
-import com.swingui.value.UISize;
-import com.swingui.value.UISize.Height;
-import com.swingui.value.UISize.Width;
 import com.swingui.value.gap.AllSidesGap;
 import com.swingui.value.gap.Gap;
+import com.swingui.value.size.UILength;
+import com.swingui.value.size.UILength.Height;
+import com.swingui.value.size.UILength.Width;
+import com.swingui.value.size.WxHSize;
 import com.swingui.widget.Framer;
 import com.swingui.widget.Widget;
 
@@ -70,24 +71,19 @@ public class WidgetHelper
      * 
      * @param <T> JComponentの継承クラス
      * @param target 対象コンポーネント
-     * @param sizes 幅・高さサイズ
+     * @param lengths 幅・高さサイズ
      * @return 対象コンポーネント
      */
-    public static <T extends JComponent> T frame(T target, UISize... sizes)
+    public static <T extends JComponent> T frame(T target, UILength... lengths)
     {
         // 幅・高さ決定
-        Width  width = Width.of(target.getPreferredSize().width);
-        Height height = Height.of(target.getPreferredSize().height);
-        for(UISize size : sizes)
-        {
-            if(size instanceof Width)  width = (Width)size;
-            if(size instanceof Height) height = (Height)size;
-        }
+        WxHSize defaults = WxHSize.from(target.getPreferredSize());
+        WxHSize size = WxHSize.of(defaults, lengths);
 
         // サイズ設定
-        target.setMaximumSize(new Dimension(width.length, height.length));
-        target.setMinimumSize(new Dimension(width.length, height.length));
-        target.setPreferredSize(new Dimension(width.length, height.length));
+        target.setMaximumSize(new Dimension(size.width.length, size.height.length));
+        target.setMinimumSize(new Dimension(size.width.length, size.height.length));
+        target.setPreferredSize(new Dimension(size.width.length, size.height.length));
         return target;
     }
 }

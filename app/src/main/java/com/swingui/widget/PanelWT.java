@@ -8,9 +8,9 @@ import java.util.function.Consumer;
 
 import javax.swing.JPanel;
 
-import com.swingui.value.UISize;
 import com.swingui.value.UIValue;
 import com.swingui.value.gap.Gap;
+import com.swingui.value.size.UILength;
 import com.swingui.widget.util.WidgetHelper;
 
 /**
@@ -99,7 +99,7 @@ public class PanelWT extends JPanel implements Widget<PanelWT>
     }
 
     @Override
-    public PanelWT frame(UISize... sizes)
+    public PanelWT frame(UILength... sizes)
     {
         return WidgetHelper.frame(this, sizes);
     }

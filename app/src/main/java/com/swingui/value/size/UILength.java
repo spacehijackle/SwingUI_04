@@ -1,22 +1,21 @@
-package com.swingui.value;
+package com.swingui.value.size;
 
 /**
- * UIサイズ（幅/高さ）提供クラス
+ * UIの長さ（幅/高さ）提供クラス
  * 
  * @author t.yoshida
  */
-public class UISize
+public class UILength
 {
-    /** サイズ長さ */
+    /** 長さ */
     public final int length;
 
     /**
-     * 指定された幅と高さで {@code UISize} を生成する。
+     * 指定された長さで {@code UILength} を生成する。
      * 
-     * @param width 幅
-     * @param height 高さ
+     * @param length 長さ
      */
-    private UISize(int length)
+    private UILength(int length)
     {
         this.length = length;
     }
@@ -24,7 +23,7 @@ public class UISize
     /**
      * 幅サイズ提供クラス
      */
-    public static class Width extends UISize
+    public static class Width extends UILength
     {
         /** 最大限の幅 */
         public static final Width Infinite = new Width(Integer.MAX_VALUE);
@@ -49,7 +48,7 @@ public class UISize
     /**
      * 高さサイズ提供クラス
      */
-    public static class Height extends UISize
+    public static class Height extends UILength
     {
         /** 最大限の高さ */
         public static final Height Infinite = new Height(Integer.MAX_VALUE);

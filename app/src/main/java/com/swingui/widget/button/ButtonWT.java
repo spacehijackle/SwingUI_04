@@ -10,9 +10,9 @@ import javax.swing.Icon;
 import javax.swing.JButton;
 
 import com.swingui.event.WTClickListener;
-import com.swingui.value.UISize;
 import com.swingui.value.UIValue;
 import com.swingui.value.gap.Gap;
+import com.swingui.value.size.UILength;
 import com.swingui.widget.Widget;
 import com.swingui.widget.util.WidgetHelper;
 
@@ -140,7 +140,7 @@ public class ButtonWT extends JButton implements Widget<ButtonWT>
     }
 
     @Override
-    public ButtonWT frame(UISize... sizes)
+    public ButtonWT frame(UILength... sizes)
     {
         return WidgetHelper.frame(this, sizes);
     }
