@@ -10,8 +10,6 @@ import javax.swing.SwingUtilities;
 import com.swingui.value.gap.AllSidesGap;
 import com.swingui.value.gap.Gap;
 import com.swingui.value.size.UILength;
-import com.swingui.value.size.UILength.Height;
-import com.swingui.value.size.UILength.Width;
 import com.swingui.value.size.WxHSize;
 import com.swingui.widget.Framer;
 import com.swingui.widget.Widget;
